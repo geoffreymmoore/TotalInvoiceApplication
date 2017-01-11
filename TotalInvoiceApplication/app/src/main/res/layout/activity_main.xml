@@ -11,7 +11,91 @@
     tools:context="com.moore.totalinvoiceapplication.MainActivity">
 
     <TextView
+        android:text="@string/subtotal_lbl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/subtotalLbl"
+        android:textStyle="normal|bold"
+        android:textSize="20sp"
+        android:layout_marginTop="30dp"
+        android:textColor="@android:color/holo_red_dark" />
+
+    <TextView
+        android:text="Percent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/subtotalLbl"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="25dp"
+        android:id="@+id/percentLbl"
+        android:textStyle="normal|bold"
+        android:textSize="20sp"
+        android:fontFamily="sans-serif" />
+
+    <TextView
+        android:text="Discount Percent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="23dp"
+        android:id="@+id/discountPrecentLbl"
+        android:layout_below="@+id/percentLbl"
+        android:layout_alignParentStart="true"
+        android:textStyle="normal|bold"
+        android:textSize="20sp" />
+
+    <TextView
+        android:text="@string/total_lbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/discountPrecentLbl"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="24dp"
+        android:id="@+id/totalLbl"
+        android:textStyle="normal|bold"
+        android:textSize="20sp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/subtotalET"
+        android:textSize="20sp"
+        android:layout_alignBaseline="@+id/subtotalLbl"
+        android:layout_alignBottom="@+id/subtotalLbl"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/discountPrecentLbl"
+        android:textAlignment="textEnd"
+        android:hint="$0.00"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:text="@string/totalTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/totalLbl"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/totalTV"
+        android:textSize="20sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/discountPercentTV"
+        android:textSize="20sp"
+        android:layout_alignBaseline="@+id/discountPrecentLbl"
+        android:layout_alignBottom="@+id/discountPrecentLbl"
+        android:layout_alignParentEnd="true"
+        android:text="00%" />
+
+    <TextView
+        android:text="00%"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/percentTV"
+        android:textSize="20sp"
+        android:layout_above="@+id/discountPrecentLbl"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>

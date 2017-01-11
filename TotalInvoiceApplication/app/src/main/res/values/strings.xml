@@ -1,3 +1,14 @@
 <resources>
-    <string name="app_name">TotalInvoiceApplication</string>
+    <string name="app_name">Total Invoice Application</string>
+    <string name="discount_precent_lbl">Discount Precent</string>
+    <string name="precent_lbl">Precent</string>
+    <string name="subtotal_lbl">Subtotal</string>
+    <string name="total_lbl">Total</string>
+    <string name="totalTV">$0.00</string>
+    <string name="discountPrecentTV">00%</string>
+    <string name="precentTV">00%</string>
+    <string name="percent_lbl">percentLbl</string>
+    <string name="percentTV">percentTV</string>
+    <string name="discountPercentTV">discountPercentTV</string>
+    <string name="discount_percent_lbl">discountPercentLbl</string>
 </resources>
