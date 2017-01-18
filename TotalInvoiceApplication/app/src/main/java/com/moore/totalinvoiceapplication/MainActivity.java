@@ -7,6 +7,7 @@ import android.view.KeyEvent;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.content.SharedPreferences.Editor;
 
 import java.text.NumberFormat;
 
@@ -21,6 +22,8 @@ implements TextView.OnEditorActionListener {
 
     private String subtotalString = "";
 
+    private SharedPreferences savedValues;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +37,9 @@ implements TextView.OnEditorActionListener {
 
         // Set the EditText event handler
         subtotalET.setOnEditorActionListener(this);
+
+        //Access the files
+        savedValues = getSharedPreferences("SavedValues",MODE_PRIVATE);
     }
     
     @Override
@@ -77,6 +83,23 @@ implements TextView.OnEditorActionListener {
         NumberFormat currency = NumberFormat.getCurrencyInstance();
         discountPercentTV.setText(currency.format(discountAmount));
         totalTV.setText(currency.format(total));
+    }
 
+    @Override
+    protected void onPause() {
+        Editor editor = savedValues.edit();
+        editor.putString("subtotalString",subtotalString);
+        editor.commit();
+
+        super.onPause();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        subtotalString = savedValues.getString("subtotalString","");
+        subtotalET.setText(subtotalString);
+        calculateAndDisplay();
     }
 }
